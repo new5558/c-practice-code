@@ -1,10 +1,10 @@
 # Ignore all
-*.o
+*
 
 # Unignore all with extensions
-# !*.*
+!*.*
 
 # Unignore all dirs
-# !*/
+!*/
 
 .vscode
