@@ -12,7 +12,7 @@ struct Stack
 struct Stack *createStack(unsigned int capacity);
 void insert(struct Stack *stack, char *data);
 void deleteTop(struct Stack *stack);
-char *checkTop(struct Stack *stack);
+char *openTop(struct Stack *stack);
 int isEmpty(struct Stack *stack);
 int isFull(struct Stack *stack);
 void deleteStack(struct Stack* stack);
@@ -24,13 +24,13 @@ int main(void)
     insert(stack, "test2");
     insert(stack, "test3");
     insert(stack, "test4");
-    char *data1 = checkTop(stack);
+    char *data1 = openTop(stack);
     printf("result : %s\n", data1);
     deleteTop(stack);
-    char *data2 = checkTop(stack);
+    char *data2 = openTop(stack);
     printf("result : %s\n", data2);
     insert(stack, "test5");
-    char *data3 = checkTop(stack);
+    char *data3 = openTop(stack);
     printf("result : %s\n", data3);
     deleteStack(stack);
     return 0;
@@ -69,7 +69,7 @@ void deleteTop(struct Stack *stack)
     }
 }
 
-char *checkTop(struct Stack *stack)
+char *openTop(struct Stack *stack)
 {
     return (stack->array)[stack->current];
 }
